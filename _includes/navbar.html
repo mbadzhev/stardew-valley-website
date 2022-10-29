@@ -1,0 +1,41 @@
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="https://stardewvalley.net/wp-content/uploads/2017/12/main_logo.png" alt="Stardew Valley"
+                width="60" height="27">
+        </a>
+        <!-- Button for collapsible menu -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- All elements inside this div will collapse when on smaller screen -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+                <!-- For every HTML file a menu iteam is created.
+                An array of .html files is sorted by the 'page_order' variable specified in YARN frontmatter -->
+                {% assign ordered_pages = site.html_pages | sort: "page_order" %}
+                {% for webpage in ordered_pages %}
+                <li class="nav-item">
+                    <!-- The 'title' variable specified in the YARN frontmatter is used for the menu iteam.
+                    If the menu iteam matches the current page, it is marked as active -->
+
+                    <a class="nav-link{% if page.url == webpage.url %} active{% endif %}" {% if page.url==webpage.url %}
+                        aria-current="page" {% endif %} href="{{webpage.url}}">{{webpage.title}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <div class="d-flex justify-content-end">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.stardewvalley.net/">Purchase</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</nav>
