@@ -1,0 +1,32 @@
+<footer class="container-fluid bg-dark d-none d-lg-block">
+    <div class="container">
+
+        <div class="d-flex flex-wrap justify-content-between align-items-center py-3">
+            <div class="justify-content-start">
+                <img src="https://stardewvalley.net/wp-content/uploads/2017/12/main_logo.png" alt="Stardew Valley"
+                    width="60" height="27">
+                <p class="d-inline-flex mb-md-0 text-muted">Stardew Valley &copy; 2016-2022 ConcernedApe LLC</p>
+            </div>
+
+            <ul class="nav justify-content-end">
+                <!-- For every HTML file a menu iteam is created.
+                    An array of .html files is sorted by the 'page_order' variable specified in YARN frontmatter -->
+                {% assign ordered_pages = site.html_pages | sort: "page_order" %}
+                {% for webpage in ordered_pages %}
+                <li class="nav-item">
+                    <!-- The 'title' variable specified in the YARN frontmatter is used for the menu iteam.
+                        If the menu iteam matches the current page, it is marked as active -->
+                    <a class="nav-link px-2 text-muted{% if page.url == webpage.url %} active{% endif %}" {% if
+                        page.url==webpage.url %} aria-current="page" {% endif %}
+                        href="{{webpage.url}}">{{webpage.title}}</a>
+                </li>
+                {% endfor %}
+                <li class="nav-item">
+                    <a class="nav-link text-muted px-2" href="https://www.stardewvalley.net/">Purchase</a>
+                </li>
+            </ul>
+
+        </div>
+        
+    </div>
+</footer>
