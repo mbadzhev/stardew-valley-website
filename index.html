@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Home"
+description: ""
 page_order: "0"
 thumbnail: ""
 ---
@@ -14,15 +15,15 @@ thumbnail: ""
             </div>
         </div>
 
-        <div class="row">
+        <div class="row my-2 my-md-4">
 
             <div class="col">
                 <div class="card">
                     <div class="row align-items-center g-0">
 
-                        <div class="col-12 col-xl-3">
+                        <div class="col-12 col-xl-3 d-none d-xl-block">
                             <img src="https://www.mobygames.com/images/covers/l/372425-stardew-valley-xbox-one-front-cover.png"
-                                class="img-fluid rounded-start d-none d-xl-block" alt="Stardew Valley Box Art">
+                                class="img-fluid rounded-start" alt="Stardew Valley Box Art">
                         </div>
 
                         <div class="col-12 col-xl-9">
@@ -67,5 +68,26 @@ thumbnail: ""
 
         </div>
 
+        <div class="row my-2 my-md-4">
+            <!-- For every HTML file a card is created.
+                An array of .html files is sorted by the 'page_order' variable specified in YARN frontmatter -->
+            {% assign ordered_pages = site.html_pages | sort: "page_order" %}
+            {% for webpage in ordered_pages %}
+            <!-- Exclude home page card from being created  -->
+            {% if webpage.title != 'Home' %}
+            <div class="col-12 col-md-4 my-2 my-md-0">
+                <div class="card">
+                    <img src="{{webpage.thumbnail}}" class="card-img-top d-none d-lg-block" alt="test">
+                    <div class="card-body p-2">
+                        <h5 class="card-title text-uppercase">{{webpage.title}}</h5>
+                        <p class="card-text">{{webpage.description}}</p>
+                        <a href="{{webpage.url}}" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        
     </div>
 </div>
