@@ -8,6 +8,7 @@ thumbnail: ""
 <div class="container-fluid">
     <div class="container my-5">
 
+        <!-- Main logo -->
         <div class="row my-5 text-center">
             <div class="col">
                 <img class="img-fluid" src="https://stardewvalley.net/wp-content/uploads/2017/12/main_logo.png"
@@ -15,17 +16,17 @@ thumbnail: ""
             </div>
         </div>
 
+        <!-- Overview card -->
         <div class="row my-2 my-md-4">
-
             <div class="col">
                 <div class="card">
                     <div class="row align-items-center g-0">
-
+                        <!-- Overview card image -->
                         <div class="col-12 col-xl-3 d-none d-xl-block">
                             <img src="https://www.mobygames.com/images/covers/l/372425-stardew-valley-xbox-one-front-cover.png"
                                 class="img-fluid rounded-start" alt="Stardew Valley Box Art">
                         </div>
-
+                        <!-- Overview card body -->
                         <div class="col-12 col-xl-9">
                             <div class="card-body p-2">
                                 <h3 class="card-title text-uppercase">Overview</h3>
@@ -61,13 +62,12 @@ thumbnail: ""
                                     class="btn btn-secondary btn-lg">Purchase</a>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
-
         </div>
 
+        <!-- Page cards -->
         <div class="row my-2 my-md-4">
             <!-- For every HTML file a card is created.
                 An array of .html files is sorted by the 'page_order' variable specified in YARN frontmatter -->
@@ -88,6 +88,6 @@ thumbnail: ""
             {% endif %}
             {% endfor %}
         </div>
-        
+
     </div>
 </div>
