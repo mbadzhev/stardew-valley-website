@@ -1,9 +1,7 @@
 <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="https://stardewvalley.net/wp-content/uploads/2017/12/main_logo.png" alt="Stardew Valley"
-                width="60" height="27">
-        </a>
+        <img src="https://stardewvalley.net/wp-content/uploads/2017/12/main_logo.png" alt="Stardew Valley" width="60"
+            height="27">
         <!-- Button for collapsible menu -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,9 +18,8 @@
                 <li class="nav-item">
                     <!-- The 'title' variable specified in the YARN frontmatter is used for the menu iteam.
                     If the menu iteam matches the current page, it is marked as active -->
-
                     <a class="nav-link{% if page.url == webpage.url %} active{% endif %}" {% if page.url==webpage.url %}
-                        aria-current="page" {% endif %} href="{{webpage.url}}">{{webpage.title}}</a>
+                        aria-current="page" {% endif %} href="/stardew-valley-wikipedia{{webpage.url}}">{{webpage.title}}</a>
                 </li>
                 {% endfor %}
             </ul>
@@ -30,7 +27,7 @@
             <div class="d-flex justify-content-end">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.stardewvalley.net/">Purchase</a>
+                        <a class="nav-link p-0" href="https://www.stardewvalley.net/#mainpage_footer">Purchase</a>
                     </li>
                 </ul>
             </div>
