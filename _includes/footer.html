@@ -18,15 +18,15 @@
                         If the menu iteam matches the current page, it is marked as active -->
                     <a class="nav-link px-2 text-muted{% if page.url == webpage.url %} active{% endif %}" {% if
                         page.url==webpage.url %} aria-current="page" {% endif %}
-                        href="{{webpage.url}}">{{webpage.title}}</a>
+                        href="/stardew-valley-wikipedia{{webpage.url}}">{{webpage.title}}</a>
                 </li>
                 {% endfor %}
                 <li class="nav-item">
-                    <a class="nav-link text-muted px-2" href="https://www.stardewvalley.net/">Purchase</a>
+                    <a class="nav-link text-muted ps-2 pe-0"
+                        href="https://www.stardewvalley.net/#mainpage_footer">Purchase</a>
                 </li>
             </ul>
-
         </div>
-        
+
     </div>
 </footer>
