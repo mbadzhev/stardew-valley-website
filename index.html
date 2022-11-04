@@ -73,7 +73,7 @@ thumbnail: ""
                 An array of .html files is sorted by the 'page_order' variable specified in YARN frontmatter -->
             {% assign ordered_pages = site.html_pages | sort: "page_order" %}
             {% for webpage in ordered_pages %}
-            <!-- Exclude home page card from being created  -->
+            <!-- Exclude home page card from being created -->
             {% if webpage.title != 'Home' %}
             <div class="col-12 col-md-4 my-2 my-md-0">
                 <div class="card">
@@ -81,7 +81,7 @@ thumbnail: ""
                     <div class="card-body p-2">
                         <h5 class="card-title text-uppercase">{{webpage.title}}</h5>
                         <p class="card-text">{{webpage.description}}</p>
-                        <a href="{{webpage.url}}" class="btn btn-primary">Learn More</a>
+                        <a href="/stardew-valley-wikipedia{{webpage.url}}" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
             </div>
